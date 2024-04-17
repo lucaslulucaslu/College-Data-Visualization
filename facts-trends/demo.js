@@ -31,7 +31,7 @@ infoChangeFunc = () => {
     render(yVal1, [yVal1 + '_men_' + yVal2, yVal1 + '_women_' + yVal2], ["Men's Ratio", "Women's Ratio"])
   }
 }
-Promise.all([d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/school_information_20240118.php?name=8413&v=jsfiddle'), d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/school_information_range_20240118.php?v=jsfiddle')]).then(([dataLoad, rangeDataLoad]) => {
+Promise.all([d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/school_information_20240118.php?name=9228&v=jsfiddle'), d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/school_information_range_20240118.php?v=jsfiddle')]).then(([dataLoad, rangeDataLoad]) => {
   dataAll = dataLoad;
   rangeData = rangeDataLoad;
   jQuery("#info_type :input").change(infoChangeFunc);
