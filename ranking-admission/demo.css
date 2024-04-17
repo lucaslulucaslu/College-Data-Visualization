@@ -1,0 +1,72 @@
+#adm_switchButton .btn-secondary:not(:disabled):not(.disabled).active,
+.btn-secondary:not(:disabled):not(.disabled):active,
+.show>.btn-secondary.dropdown-toggle {
+  background-color: #589dcd;
+  border-color: #589dcd;
+}
+
+#ranking_admin_canvas .tick text {
+  font-size: 1.4em;
+  fill: #635F5D;
+}
+
+#ranking_admin_canvas .tick line {
+  stroke: #C0C0BB;
+}
+
+#ranking_admin_canvas .axis-label {
+  font-size: 1.4em;
+  fill: #8E8883;
+}
+
+#ranking_admin_legend div{margin:0 5px}
+#ranking_admin_legend div span{margin-left:5px}
+
+#ranking_admin_canvas .line-move-animation {
+  stroke-dasharray: 5px 5px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  -webkit-animation: am-moving-dashes 1s linear infinite;
+  animation: am-moving-dashes 1s linear infinite;
+}
+
+@-webkit-keyframes am-moving-dashes {
+  100% {
+    stroke-dashoffset: -31px;
+  }
+}
+
+@keyframes am-moving-dashes {
+  100% {
+    stroke-dashoffset: -31px;
+  }
+}
+
+#ranking_admin_canvas .rect3:last-child {
+  -webkit-animation: am-pulsating 1s ease-out infinite;
+  animation: am-pulsating 1s ease-out infinite;
+}
+
+@-webkit-keyframes am-pulsating {
+  0% {
+    stroke-opacity: 1;
+    stroke-width: 0;
+  }
+
+  100% {
+    stroke-opacity: 0;
+    stroke-width: 20px;
+  }
+}
+
+@keyframes am-pulsating {
+  0% {
+    stroke-opacity: 1;
+    stroke-width: 0;
+  }
+
+  100% {
+    stroke-opacity: 0;
+    stroke-width: 20px;
+  }
+}
