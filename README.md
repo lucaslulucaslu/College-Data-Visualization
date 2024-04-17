@@ -9,7 +9,7 @@ https://jsfiddle.net/gh/get/library/pure/lucaslulucaslu/College-Data-Visualizati
 ## Majors visualization
 https://jsfiddle.net/gh/get/library/pure/lucaslulucaslu/College-Data-Visualization//tree/master/college-majors
 
-<img src="/college-majors/UCLA-majors.jpg" width=600>
+<img src="/college-majors/UCLA-majors-label.jpg" width=600>
 
 ## Score requirements visualization
 https://jsfiddle.net/gh/get/library/pure/lucaslulucaslu/College-Data-Visualization//tree/master/score-requirements
