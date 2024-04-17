@@ -27,9 +27,9 @@ const pie = d3.pie()
   .value(d => d.value);
 d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/student_comp_20240118.php?name=9228&v=jsfiddle').then(data => {
   const converArray = {
-    'uf': 'Under Freshmen',
-    'uj': 'Under Senior',
-    'ut': 'Under Transfer',
+    'uf': 'Freshmen',
+    'uj': 'Senior',
+    'ut': 'Transfer',
     'gr': 'Master',
     'nd': 'Non-Degree',
     'wh': 'White',
@@ -190,7 +190,7 @@ function draw_second_pie(data2) {
 function mouseover(event, d) {
   student_comp_tooltip.style('display', 'block')
     .style('background-color', d.data.color)
-    .html((d.data.top?d.data.top+"中：<br>":"")+d.data.name +': '+ d.data.value + ", percentage: " + d.data.percentage + "%<br>Men: " + d.data.ratioM + "%, Women: " + d.data.ratioW + "%");
+    .html((d.data.top?d.data.top+"：<br>":"")+d.data.name +': '+ d.data.value + ", percentage: " + d.data.percentage + "%<br>Men: " + d.data.ratioM + "%, Women: " + d.data.ratioW + "%");
   if (d.data.name == 'White') {
     student_comp_tooltip.style('color', 'black')
   } else {
