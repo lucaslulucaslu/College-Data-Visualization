@@ -1,0 +1,14 @@
+#salary_canvas .tick text {
+  font-size: 1.4em;
+  fill: #635F5D;
+}
+
+#salary_canvas .tick line {
+  stroke: #e9e9e9;
+}
+#salary_canvas .axis-label {
+  font-size: 2em;
+  fill: #8E8883;
+}
+#salary_canvas .slider text {font-size: 1.2rem}
+#salary_canvas .slider .parameter-value path {fill: #00ae88}
