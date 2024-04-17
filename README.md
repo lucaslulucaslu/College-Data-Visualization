@@ -40,3 +40,9 @@ https://jsfiddle.net/gh/get/library/pure/lucaslulucaslu/College-Data-Visualizati
 https://jsfiddle.net/gh/get/library/pure/lucaslulucaslu/College-Data-Visualization//tree/master/campus-safety
 
 <img src="/campus-safety/UCLA-campus-safety.jpg" width=600>
+
+## Professor/Staff salary
+https://jsfiddle.net/gh/get/library/pure/lucaslulucaslu/College-Data-Visualization//tree/master/salary
+
+<img src="/salary/UCLA-salary.jpg" width=600>
+
