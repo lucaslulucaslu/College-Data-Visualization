@@ -1,5 +1,5 @@
 # College-Data-Visualization
-visualize colleges data that no one else does - fully interactive visualization
+visualize colleges data that no one else does - fully interactive visualization for 7000+ US post-seconddary institues
 
 ## College ranking and admission information visualization
 https://jsfiddle.net/gh/get/library/pure/lucaslulucaslu/College-Data-Visualization//tree/master/ranking-admission
