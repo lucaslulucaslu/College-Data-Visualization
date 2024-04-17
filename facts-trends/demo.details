@@ -1,12 +1,12 @@
 ---
- name: Test
- description: test
+ name: Name of the Demo
+ description: Some description, please keep it in one line
+ authors:
+   - John Doe
+   - Jan Wisniewski
  resources:
-   - 
+   - http://some.url.com/some/file.js
+   - http://other.url.com/other_filename.css
  normalize_css: no
- dtd: html 5
- wrap: d
- panel_html: 0
- panel_js: 0
- panel_css: 0
-...
+ load_type: d
+ ...
