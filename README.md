@@ -2,6 +2,5 @@
 visualize colleges data that no one else does
 
 ---------------------------------------------------basic facts visualization-----------------------------------------------------
-<img src="/images/UCLA%20facts.jpg" width=600>
-
-code: https://jsfiddle.net/shichenglu/3m1aqejg/
+https://jsfiddle.net/gh/get/library/pure/lucaslulucaslu/college-data-visualization/tree/master/facts-trends
+<img src="/facts-trends/UCLA-trends.jpg" width=600>
