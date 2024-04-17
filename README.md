@@ -4,7 +4,7 @@ visualize colleges data that no one else does - fully interactive visualization
 ## College facts trends visualization
 https://jsfiddle.net/gh/get/library/pure/lucaslulucaslu/College-Data-Visualization//tree/master/facts-trends
 
-<img src="/facts-trends/UCLA-trends.jpg" width=600>
+<img src="/facts-trends/UCLA-facts.jpg" width=600>
 
 ## Majors visualization
 https://jsfiddle.net/gh/get/library/pure/lucaslulucaslu/College-Data-Visualization//tree/master/college-majors
