@@ -28,7 +28,7 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/degree_all_
     'master': 'Master',
     'doctor': 'Doctor'
   }
-  const name = d => d.ancestors().reverse().map(d => d.data.name).join("/")
+  const name = d => d.ancestors().reverse().map(d => d.data.ename).join("/")
   const x = d3.scaleLinear().rangeRound([0, width]);
   const y = d3.scaleLinear().rangeRound([0, height]);
   const svg = d3.select('#major_canvas').append('svg')
@@ -84,7 +84,7 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/degree_all_
     }
     const node = group
       .selectAll("g")
-      .data(displayData, d => d.data.name + d.depth)
+      .data(displayData, d => d.data.ename + d.depth)
       .join(
         function(enter) {
           enter = enter.append('g')
@@ -99,14 +99,14 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/degree_all_
               if (d === root) {
                 return '#f0f0f0';
               } else if (d.depth == 3) {
-                return color2(d.data.name)
+                return color2(d.data.ename)
               } else if (d.depth == 4) {
-                return color_mw(d.data.name)
+                return color_mw(d.data.ename)
               } else {
                 while (d.depth > 1) {
                   d = d.parent
                 }
-                return color(d.data.name);
+                return color(d.data.ename);
               }
             })
             .attr("stroke", "#fff")
@@ -116,14 +116,14 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/degree_all_
             .on('mouseover', function(event, d) {
               d3.select(this).attr("fill", function(d) {
                 if (d.depth == 3) {
-                  return d3.color(color2(d.data.name)).darker(0.3)
+                  return d3.color(color2(d.data.ename)).darker(0.3)
                 } else if (d.depth == 4) {
-                  return d3.color(color_mw(d.data.name)).darker(0.3)
+                  return d3.color(color_mw(d.data.ename)).darker(0.3)
                 } else {
                   while (d.depth > 1) {
                     d = d.parent
                   }
-                  return d3.color(color(d.data.name)).darker(0.3);
+                  return d3.color(color(d.data.ename)).darker(0.3);
                 }
               })
               mouseover();
@@ -132,14 +132,14 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/degree_all_
             .on('mouseout', function(event, d) {
               d3.select(this).attr("fill", function(d) {
                 if (d.depth == 3) {
-                  return color2(d.data.name)
+                  return color2(d.data.ename)
                 } else if (d.depth == 4) {
-                  return color_mw(d.data.name)
+                  return color_mw(d.data.ename)
                 } else {
                   while (d.depth > 1) {
                     d = d.parent
                   }
-                  return color(d.data.name)
+                  return color(d.data.ename)
                 }
               })
               mouseout();
@@ -149,7 +149,7 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/degree_all_
           enter.filter(d => d.depth === 1)
             .append('image')
             .attr('class', 'classLogo')
-            .attr('xlink:href', d => 'https://static.forwardpathway.com/logos/hotlink-ok/degreelogo/' + d.data.name + '-min.png')
+            .attr('xlink:href', d => 'https://static.forwardpathway.com/logos/hotlink-ok/degreelogo/' + d.data.ename + '-min.png')
             .attr('width', d => logoSize(d, root).size)
             .attr('height', d => logoSize(d, root).size)
             .attr('transform', d => `translate(${logoSize(d,root).xOffset},${logoSize(d,root).yOffset})`)
@@ -163,7 +163,7 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/degree_all_
             .attr('fill', d => d === root ? '#000' : '#fff')
             .attr('x', d => (d === root ? 10 : x(d.x1) - x(d.x0)) / 2)
             .attr('y', d => (d === root ? 35 : y(d.y1) - y(d.y0)) / 2)
-            .text(d => d === root ? d.data.name + data.year + '年毕业生分布' : labelText(d, type))
+            .text(d => d === root ? d.data.ename + data.year + '年毕业生分布' : labelText(d, type))
 
           enter.filter(d => d.depth > 1)
             .append('text').attr('class', 'classValue')
@@ -184,14 +184,14 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/degree_all_
               if (d == root) {
                 return '#f0f0f0';
               } else if (d.depth == 3) {
-                return color2(d.data.name)
+                return color2(d.data.ename)
               } else if (d.depth == 4) {
-                return color_mw(d.data.name)
+                return color_mw(d.data.ename)
               } else {
                 while (d.depth > 1) {
                   d = d.parent
                 }
-                return color(d.data.name);
+                return color(d.data.ename);
               }
             })
             .transition().duration(500)
@@ -205,7 +205,7 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/degree_all_
           update.select('.className')
             .attr('text-anchor', d => d === root ? null : 'middle')
             .attr('font-size', d => d.depth == 2 && type == 'allMajors' ? '0.6em' : '0.8em')
-            .text(d => d === root ? d.data.name + data.year + ' graduates' : labelText(d, type))
+            .text(d => d === root ? d.data.ename + data.year + ' graduates' : labelText(d, type))
             .attr('fill', d => d === root ? '#000' : '#fff')
             .transition().duration(500)
             .attr('x', d => (d === root ? 10 : x(d.x1) - x(d.x0)) / 2)
@@ -229,7 +229,7 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/degree_all_
       k = (type == 'allMajors' ? 12 : 20)
     const maxLength = Math.floor(nodeWidth / k)
     if (nodeHeight > 20 && maxLength > 0) {
-      return d.data.name.length > maxLength ? (d.data.name.slice(0, maxLength) + '...') : d.data.name
+      return d.data.ename.length > maxLength ? (d.data.ename.slice(0, maxLength) + '...') : d.data.ename
     } else {
       return null;
     }
@@ -261,9 +261,9 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/degree_all_
       .attr('y', d => (d === root ? 35 : y(d.y1) - y(d.y0)) / 2)
       .text(function(d) {
         if (d.depth === 0) {
-          return d.data.name + data.year + ' graduates'
+          return d.data.ename + data.year + ' graduates'
         } else {
-          return d === root ? d.ancestors().reverse().map(d => d.data.name).join("≫") : labelText(d, null)
+          return d === root ? d.ancestors().reverse().map(d => d.data.ename).join("≫") : labelText(d, null)
         }
       })
     group.selectAll('.classValue')
@@ -346,9 +346,9 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/degree_all_
     const mouse = d3.pointer(event, svg.node())
     let selectedData, selectedLevel, tooltipX, tooltipY
     if (d.depth == 1) {
-      tooltipText.text(data.name)
+      tooltipText.text(data.ename)
         .append('tspan').attr('x', 0).attr('dy', '1.3em').attr('font-weight', 'bold')
-        .text(d.data.name)
+        .text(d.data.ename)
         .append('tspan').attr('x', 0).attr('dy', '1.3em')
         .text(d.data.ename)
         .append('tspan').attr('x', 0).attr('dy', '1.3em').attr('font-weight', 'normal')
@@ -357,9 +357,9 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/degree_all_
         .text('click for next level')
     } else if (d.depth == 2) {
       const type = d3.select('#major_displayType label.active input').attr('class')
-      tooltipText.text(d.parent.data.name)
+      tooltipText.text(d.parent.data.ename)
         .append('tspan').attr('x', 0).attr('dy', '1.3em').attr('font-weight', 'bold')
-        .text(d.data.name + ' major')
+        .text(d.data.ename + ' major')
         .append('tspan').attr('x', 0).attr('dy', '1.3em')
         .text(d.data.ename)
         .append('tspan').attr('x', 0).attr('dy', '1.3em').attr('font-weight', 'normal')
@@ -369,9 +369,9 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/degree_all_
           .text('click for next level')
       }
     } else if (d.depth == 3) {
-      tooltipText.text(d.parent.data.name + ' major')
+      tooltipText.text(d.parent.data.ename + ' major')
         .append('tspan').attr('x', 0).attr('dy', '1.3em').attr('font-weight', 'bold')
-        .text(d.data.name)
+        .text(d.data.ename)
         .append('tspan').attr('x', 0).attr('dy', '1.3em')
         .text(d.data.ename)
         .append('tspan').attr('x', 0).attr('dy', '1.3em').attr('font-weight', 'normal')
@@ -379,11 +379,11 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/degree_all_
         .append('tspan').attr('x', 0).attr('dy', '1.3em')
         .text('click for M/W ratio')
     } else if (d.depth == 4) {
-      tooltipText.text(d.parent.parent.data.name + ' major')
+      tooltipText.text(d.parent.parent.data.ename + ' major')
         .append('tspan').attr('x', 0).attr('dy', '1.3em')
-        .text(d.parent.data.name)
+        .text(d.parent.data.ename)
         .append('tspan').attr('x', 0).attr('dy', '1.3em').attr('font-weight', 'bold')
-        .text(d.data.name + ' (' + d.data.ename + ')')
+        .text(d.data.ename + ' (' + d.data.ename + ')')
         .append('tspan').attr('x', 0).attr('dy', '1.3em').attr('font-weight', 'normal')
         .text(data.year + ' graduates: ' + levelName + d.value + '人（' + d3.format('.2%')(d.value / d.parent.value) + '）')
     }
@@ -394,14 +394,14 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/degree_all_
       .attr('height', tooltipBox.height + 10)
       .attr("fill", function(dd = d) {
         if (dd.depth == 3) {
-          return d3.color(color2(dd.data.name)).darker()
+          return d3.color(color2(dd.data.ename)).darker()
         } else if (dd.depth == 4) {
-          return d3.color(color_mw(dd.data.name)).darker()
+          return d3.color(color_mw(dd.data.ename)).darker()
         } else {
           while (dd.depth > 1) {
             dd = dd.parent
           }
-          return d3.color(color(dd.data.name)).darker();
+          return d3.color(color(dd.data.ename)).darker();
         }
       })
     if (mouse[0] + tooltipBox.width + 20 > width) {
