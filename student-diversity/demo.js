@@ -27,17 +27,17 @@ const pie = d3.pie()
   .value(d => d.value);
 d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/student_comp_20240118.php?name=9228&v=jsfiddle').then(data => {
   const converArray = {
-    'uf': '本科新生',
-    'uj': '本科老生',
-    'ut': '本科转学',
-    'gr': '研究生',
-    'nd': '无学位',
-    'wh': '白人',
-    'as': '亚裔',
-    'la': '拉丁裔',
-    'pa': '太平洋岛民及其他',
-    'af': '非裔',
-    'nr': '留学生'
+    'uf': 'Under Freshmen',
+    'uj': 'Under Senior',
+    'ut': 'Under Transfer',
+    'gr': 'Master',
+    'nd': 'Non-Degree',
+    'wh': 'White',
+    'as': 'Asian',
+    'la': 'Hispanic',
+    'pa': 'Pacific',
+    'af': 'American african',
+    'nr': 'International'
   };
   const total = d3.sum(data, function(d) {
     return d.value;
@@ -58,7 +58,7 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/student_com
   .attr('text-anchor','middle')
   .attr('font-size','2em')
   .attr('dominant-baseline','middle')
-  .text(data[0].year+'年')
+  .text(data[0].year)
   const arc = d3.arc()
     .innerRadius(radius / 2)
     .outerRadius(radius - 1)
@@ -190,8 +190,8 @@ function draw_second_pie(data2) {
 function mouseover(event, d) {
   student_comp_tooltip.style('display', 'block')
     .style('background-color', d.data.color)
-    .html((d.data.top?d.data.top+"中：<br>":"")+d.data.name + d.data.value + "人，占比" + d.data.percentage + "%<br>其中男生" + d.data.ratioM + "%，女生" + d.data.ratioW + "%");
-  if (d.data.name == '白人') {
+    .html((d.data.top?d.data.top+"中：<br>":"")+d.data.name +': '+ d.data.value + ", percentage: " + d.data.percentage + "%<br>Men: " + d.data.ratioM + "%, Women: " + d.data.ratioW + "%");
+  if (d.data.name == 'White') {
     student_comp_tooltip.style('color', 'black')
   } else {
     student_comp_tooltip.style('color', 'white')
