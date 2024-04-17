@@ -205,7 +205,7 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/degree_all_
           update.select('.className')
             .attr('text-anchor', d => d === root ? null : 'middle')
             .attr('font-size', d => d.depth == 2 && type == 'allMajors' ? '0.6em' : '0.8em')
-            .text(d => d === root ? d.data.ename + data.year + ' graduates' : labelText(d, type))
+            .text(d => d === root ? d.data.ename +' '+ data.year + ' graduates' : labelText(d, type))
             .attr('fill', d => d === root ? '#000' : '#fff')
             .transition().duration(500)
             .attr('x', d => (d === root ? 10 : x(d.x1) - x(d.x0)) / 2)
@@ -261,7 +261,7 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/degree_all_
       .attr('y', d => (d === root ? 35 : y(d.y1) - y(d.y0)) / 2)
       .text(function(d) {
         if (d.depth === 0) {
-          return d.data.ename + data.year + ' graduates'
+          return d.data.ename +' '+ data.year + ' graduates'
         } else {
           return d === root ? d.ancestors().reverse().map(d => d.data.ename).join("≫") : labelText(d, null)
         }
@@ -269,7 +269,7 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/degree_all_
     group.selectAll('.classValue')
       .attr('x', d => (d === root ? 10 : x(d.x1) - x(d.x0)) / 2)
       .attr('y', d => (d === root ? 35 : y(d.y1) - y(d.y0)) / 2 + 15)
-      .text(d => d === root || (x(d.x1) - x(d.x0)) < 20 || (y(d.y1) - y(d.y0)) < 30 ? null : d.value + '人')
+      .text(d => d === root || (x(d.x1) - x(d.x0)) < 20 || (y(d.y1) - y(d.y0)) < 30 ? null : d.value)
   }
 
   function logoSize(d, root) {
