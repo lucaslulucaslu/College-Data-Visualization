@@ -173,7 +173,7 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/degree_all_
             .attr('fill', '#fff')
             .attr('x', d => (d === root ? 10 : x(d.x1) - x(d.x0)) / 2)
             .attr('y', d => (d === root ? 35 : y(d.y1) - y(d.y0)) / 2 + 15)
-            .text(d => d === root || (x(d.x1) - x(d.x0)) < 20 || (y(d.y1) - y(d.y0)) < 30 ? null : d.value + '人')
+            .text(d => d === root || (x(d.x1) - x(d.x0)) < 20 || (y(d.y1) - y(d.y0)) < 30 ? null : d.value)
           return enter;
         },
         function(update) {
@@ -211,7 +211,7 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/degree_all_
             .attr('x', d => (d === root ? 10 : x(d.x1) - x(d.x0)) / 2)
             .attr('y', d => (d === root ? 35 : y(d.y1) - y(d.y0)) / 2)
           update.select('.classValue')
-            .text(d => d === root || (x(d.x1) - x(d.x0)) < 20 || (y(d.y1) - y(d.y0)) < 30 ? null : d.value + '人')
+            .text(d => d === root || (x(d.x1) - x(d.x0)) < 20 || (y(d.y1) - y(d.y0)) < 30 ? null : d.value)
             .attr('font-size', d => d.depth == 2 && type == 'allMajors' ? '0.6em' : '0.8em')
             .transition().duration(500)
             .attr('x', d => (d === root ? 10 : x(d.x1) - x(d.x0)) / 2)
