@@ -1,8 +1,8 @@
 ---
- name: Take a Snapshot of the Map
- description: Capture an area on the map
+ name: Test
+ description: test
  resources:
-   - https://js.api.here.com/v3/3.0/mapsjs-ui.css
+   - 
  normalize_css: no
  dtd: html 5
  wrap: d
