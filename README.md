@@ -25,3 +25,8 @@ https://jsfiddle.net/gh/get/library/pure/lucaslulucaslu/College-Data-Visualizati
 https://jsfiddle.net/gh/get/library/pure/lucaslulucaslu/College-Data-Visualization//tree/master/age-distribution
 
 <img src="/age-distribution/UCLA-students-age.jpg" width=600>
+
+## Nearby colleges
+https://jsfiddle.net/gh/get/library/pure/lucaslulucaslu/College-Data-Visualization//tree/master/nearby-colleges
+
+<img src="/nearby-colleges/UCLA-nearby-colleges.jpg" width=600>
