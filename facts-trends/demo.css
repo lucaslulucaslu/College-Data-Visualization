@@ -1,1 +1,40 @@
+#level_switchButton .btn-secondary:not(:disabled):not(.disabled).active,
+.btn-secondary:not(:disabled):not(.disabled):active,
+.show>.btn-secondary.dropdown-toggle {
+  background-color: #589dcd;
+  border-color: #589dcd;
+}
+#race_switchButton .btn-secondary:not(:disabled):not(.disabled).active,
+.btn-secondary:not(:disabled):not(.disabled):active,
+.show>.btn-secondary.dropdown-toggle {
+  background-color: #05cbae;
+  border-color: #05cbae;
+}
 
+#international_canvas .line {
+  stroke-width: 6;
+  fill: none;
+}
+
+#international_canvas .tick text {
+  font-size: 1.2em;
+  fill: #635F5D;
+}
+
+#international_canvas .tick line {
+  stroke: #C0C0BB;
+}
+
+#international_canvas .axis-label {
+  font-size: 1em;
+  fill: #8E8883;
+}
+
+#international_canvas .legend {
+  font-size: 1em;
+  fill: #8E888e;
+}
+
+#international_canvas .tooltip-text-line {
+  font-size: 1em
+}
