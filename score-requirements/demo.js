@@ -223,7 +223,7 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/score10_202
     score_pie_g.selectAll('title')
     	.data(d=>[d])
       .join('title')
-      .text(d => '录取学生中' + d.name + '成绩提交比例为' + d.per + '%')
+      .text(d => 'Students ' + d.name + ' percentage: ' + d.per + '%')
     score_pie_g.selectAll('path')
       .data(function(d) {
         let ds = []
