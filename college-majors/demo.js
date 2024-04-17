@@ -163,7 +163,7 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/degree_all_
             .attr('fill', d => d === root ? '#000' : '#fff')
             .attr('x', d => (d === root ? 10 : x(d.x1) - x(d.x0)) / 2)
             .attr('y', d => (d === root ? 35 : y(d.y1) - y(d.y0)) / 2)
-            .text(d => d === root ? d.data.ename + data.year + '年毕业生分布' : labelText(d, type))
+            .text(d => d === root ? d.data.ename + ' ' + data.year + ' graduates' : labelText(d, type))
 
           enter.filter(d => d.depth > 1)
             .append('text').attr('class', 'classValue')
