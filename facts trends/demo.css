@@ -1,0 +1,49 @@
+#info_type .btn-secondary:not(:disabled):not(.disabled).active,
+#info_type .btn-secondary:not(:disabled):not(.disabled):active,
+#info_type .show>.btn-secondary.dropdown-toggle,
+#info_level .btn-secondary:not(:disabled):not(.disabled).active,
+#info_level .btn-secondary:not(:disabled):not(.disabled):active,
+#info_level .show>.btn-secondary.dropdown-toggle,
+#info_compare .btn-secondary:not(:disabled):not(.disabled).active,
+#info_compare .btn-secondary:not(:disabled):not(.disabled):active,
+#info_compare .show>.btn-secondary.dropdown-toggle {
+  background-color: #589dcd;
+  border-color: #589dcd;
+}
+
+#info_level .btn-secondary.disabled {
+  background-color: #8B9196;
+  border-color: #8B9196
+}
+
+@media only screen and (max-width: 600px) {
+  #info_type .btn {
+    padding: .375rem .375rem
+  }
+}
+
+#information_canvas .tick text {
+  font-size: 1.4em;
+  fill: #635F5D;
+}
+
+#information_canvas .tick line {
+  stroke: #C0C0BB;
+}
+
+#information_canvas .axis-label {
+  font-size: 1em;
+  fill: #8E8883;
+}
+
+#information_legend_canvas div {
+  margin: 0 1.5em
+}
+
+#information_legend_canvas svg {
+  vertical-align: middle
+}
+
+#information_legend_canvas div span {
+  margin-left: 0.5em
+}
