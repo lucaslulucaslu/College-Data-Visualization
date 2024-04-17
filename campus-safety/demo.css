@@ -1,0 +1,8 @@
+#crime_canvas .slider text {
+  font-size: 1.2rem
+}
+
+#crime_canvas .slider .parameter-value path {
+  fill: #00ae88
+}
+
