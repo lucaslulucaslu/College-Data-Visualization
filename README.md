@@ -1,6 +1,11 @@
 # College-Data-Visualization
 visualize colleges data that no one else does - fully interactive visualization
 
+## College ranking and admission information visualization
+https://jsfiddle.net/gh/get/library/pure/lucaslulucaslu/College-Data-Visualization//tree/master/ranking-admission
+
+<img src="/ranking-admission/UCLA-ranking-admission.jpg" width=600>
+
 ## College facts trends visualization
 https://jsfiddle.net/gh/get/library/pure/lucaslulucaslu/College-Data-Visualization//tree/master/facts-trends
 
