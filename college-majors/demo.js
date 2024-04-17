@@ -23,10 +23,10 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/degree_all_
   }
   const levelNameArray = {
     'all': '',
-    'associate': '副学士',
-    'under': '本科',
-    'master': '硕士',
-    'doctor': '博士'
+    'associate': 'Associate',
+    'under': 'Under',
+    'master': 'Master',
+    'doctor': 'Doctor'
   }
   const name = d => d.ancestors().reverse().map(d => d.data.name).join("/")
   const x = d3.scaleLinear().rangeRound([0, width]);
@@ -51,9 +51,9 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/degree_all_
   })
   d3.selectAll('#major_displayType input').on('click', function() {
     if (d3.select(this).attr('class') == 'allMajors') {
-      d3.select('#major_displayType_text').text('*只显示专业层级数据')
+      d3.select('#major_displayType_text').text('*All majors')
     } else {
-      d3.select('#major_displayType_text').text('*点击任意区块可渐进显示下一层级数据')
+      d3.select('#major_displayType_text').text('*Click any group block to show next level')
     }
     x.domain([0, 1]);
     y.domain([0, 1]);
@@ -205,7 +205,7 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/degree_all_
           update.select('.className')
             .attr('text-anchor', d => d === root ? null : 'middle')
             .attr('font-size', d => d.depth == 2 && type == 'allMajors' ? '0.6em' : '0.8em')
-            .text(d => d === root ? d.data.name + data.year + '年毕业生分布' : labelText(d, type))
+            .text(d => d === root ? d.data.name + data.year + ' graduates' : labelText(d, type))
             .attr('fill', d => d === root ? '#000' : '#fff')
             .transition().duration(500)
             .attr('x', d => (d === root ? 10 : x(d.x1) - x(d.x0)) / 2)
@@ -261,7 +261,7 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/degree_all_
       .attr('y', d => (d === root ? 35 : y(d.y1) - y(d.y0)) / 2)
       .text(function(d) {
         if (d.depth === 0) {
-          return d.data.name + data.year + '年毕业生分布'
+          return d.data.name + data.year + ' graduates'
         } else {
           return d === root ? d.ancestors().reverse().map(d => d.data.name).join("≫") : labelText(d, null)
         }
@@ -308,7 +308,7 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/degree_all_
       .attr('x', width - 10)
       .attr('y', -7)
       .attr('pointer-events', 'none')
-      .text('点击返回上一层')
+      .text('click to go back')
   }
 
   function zoomout(d) {
@@ -329,7 +329,7 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/degree_all_
         .attr('x', width - 10)
         .attr('y', -7)
         .attr('pointer-events', 'none')
-        .text('点击返回上一层')
+        .text('click to go back')
     }
   }
 
@@ -352,40 +352,40 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/degree_all_
         .append('tspan').attr('x', 0).attr('dy', '1.3em')
         .text(d.data.ename)
         .append('tspan').attr('x', 0).attr('dy', '1.3em').attr('font-weight', 'normal')
-        .text(data.year + '年共毕业' + levelName + d.value + '人（' + d3.format('.2%')(d.value / d.parent.value) + '）')
+        .text(data.year + ' graduates: ' + levelName + d.value + '（' + d3.format('.2%')(d.value / d.parent.value) + '）')
         .append('tspan').attr('x', 0).attr('dy', '1.3em')
-        .text('点击查看下属专业毕业生详情')
+        .text('click for next level')
     } else if (d.depth == 2) {
       const type = d3.select('#major_displayType label.active input').attr('class')
       tooltipText.text(d.parent.data.name)
         .append('tspan').attr('x', 0).attr('dy', '1.3em').attr('font-weight', 'bold')
-        .text(d.data.name + '专业')
+        .text(d.data.name + ' major')
         .append('tspan').attr('x', 0).attr('dy', '1.3em')
         .text(d.data.ename)
         .append('tspan').attr('x', 0).attr('dy', '1.3em').attr('font-weight', 'normal')
-        .text(data.year + '年共毕业' + levelName + d.value + '人（' + d3.format('.2%')(d.value / (type == 'clickMajors' ? d.parent.value : d.parent.parent.value)) + '）')
+        .text(data.year + ' graduates: ' + levelName + d.value + '（' + d3.format('.2%')(d.value / (type == 'clickMajors' ? d.parent.value : d.parent.parent.value)) + '）')
       if (type == 'clickMajors') {
         tooltipText.append('tspan').attr('x', 0).attr('dy', '1.3em')
-          .text('点击查看该专业毕业生详情')
+          .text('click for next level')
       }
     } else if (d.depth == 3) {
-      tooltipText.text(d.parent.data.name + '专业')
+      tooltipText.text(d.parent.data.name + ' major')
         .append('tspan').attr('x', 0).attr('dy', '1.3em').attr('font-weight', 'bold')
         .text(d.data.name)
         .append('tspan').attr('x', 0).attr('dy', '1.3em')
         .text(d.data.ename)
         .append('tspan').attr('x', 0).attr('dy', '1.3em').attr('font-weight', 'normal')
-        .text(data.year + '年共毕业' + levelName + d.value + '人（' + d3.format('.2%')(d.value / d.parent.value) + '）')
+        .text(data.year + ' graduates: ' + levelName + d.value + '（' + d3.format('.2%')(d.value / d.parent.value) + '）')
         .append('tspan').attr('x', 0).attr('dy', '1.3em')
-        .text('点击查看男女生比例')
+        .text('click for M/W ratio')
     } else if (d.depth == 4) {
-      tooltipText.text(d.parent.parent.data.name + '专业')
+      tooltipText.text(d.parent.parent.data.name + ' major')
         .append('tspan').attr('x', 0).attr('dy', '1.3em')
         .text(d.parent.data.name)
         .append('tspan').attr('x', 0).attr('dy', '1.3em').attr('font-weight', 'bold')
         .text(d.data.name + ' (' + d.data.ename + ')')
         .append('tspan').attr('x', 0).attr('dy', '1.3em').attr('font-weight', 'normal')
-        .text(data.year + '年共毕业' + levelName + d.value + '人（' + d3.format('.2%')(d.value / d.parent.value) + '）')
+        .text(data.year + ' graduates: ' + levelName + d.value + '人（' + d3.format('.2%')(d.value / d.parent.value) + '）')
     }
     const tooltipBox = tooltipText.node().getBBox();
     tooltipRect.attr('x', tooltipBox.x - 10)
