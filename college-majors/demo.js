@@ -149,7 +149,7 @@ d3.json('https://www.forwardpathway.com/d3v7/dataphp/school_database/degree_all_
           enter.filter(d => d.depth === 1)
             .append('image')
             .attr('class', 'classLogo')
-            .attr('xlink:href', d => 'https://static.forwardpathway.com/logos/hotlink-ok/degreelogo/' + d.data.ename + '-min.png')
+            .attr('xlink:href', d => 'https://static.forwardpathway.com/logos/hotlink-ok/degreelogo/' + d.data.name + '-min.png')
             .attr('width', d => logoSize(d, root).size)
             .attr('height', d => logoSize(d, root).size)
             .attr('transform', d => `translate(${logoSize(d,root).xOffset},${logoSize(d,root).yOffset})`)
