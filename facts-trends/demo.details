@@ -1,4 +1,4 @@
----
+/*---
  name: Name of the Demo
  description: Some description, please keep it in one line
  authors:
@@ -10,3 +10,4 @@
  normalize_css: no
  load_type: d
  ...
+*/
