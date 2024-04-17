@@ -1,0 +1,13 @@
+#age-switchButton .btn-secondary:not(:disabled):not(.disabled).active,
+#age-switchButton .btn-secondary:not(:disabled):not(.disabled):active,
+#age-switchButton .show>.btn-secondary.dropdown-toggle {
+  background-color: #589dcd;
+  border-color: #589dcd;
+}
+
+#age_canvas .tick line {
+  stroke: #C0C0BB;
+}
+#age_canvas .tick text {
+  font-size:1.5em;
+}
