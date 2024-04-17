@@ -1,1 +1,48 @@
-this is a test HTML
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<div style="text-align:center;margin-bottom:10px">
+  <div id="info_type" class="btn-group btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-secondary tuition active">
+      <input type="radio" name="options" class="tuition" autocomplete="off" checked>Tuition
+    </label>
+    <label class="btn btn-secondary students">
+      <input type="radio" name="options" class="students" autocomplete="off">Students
+    </label>
+    <label class="btn btn-secondary graduation">
+      <input type="radio" name="options" class="graduation" autocomplete="off">Graduation
+    </label>
+    <label class="btn btn-secondary retention">
+      <input type="radio" name="options" class="retention" autocomplete="off">Retention
+    </label>
+    <label class="btn btn-secondary s2f">
+      <input type="radio" name="options" class="s2f" autocomplete="off">Students-Faculty Ratio
+    </label>
+    <label class="btn btn-secondary m2w">
+      <input type="radio" name="options" class="m2w" autocomplete="off">Men-Women Ratio
+    </label>
+  </div>
+</div>
+<div style="text-align:center;margin-bottom:10px">
+  <div id="info_level" class="btn-group btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-secondary infoUnderButton active">
+      <input type="radio" name="options" class="under" autocomplete="off" checked>Under
+    </label>
+    <label class="btn btn-secondary infoGradButton">
+      <input type="radio" name="options" class="grad" autocomplete="off">Grad
+    </label>
+  </div>
+
+  <div id="info_compare" class="btn-group btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-secondary compare200 active">
+      <input type="radio" name="options" class="compareY" autocomplete="off" checked>Top200 Colleges Range*
+    </label>
+    <label class="btn btn-secondary compare0">
+      <input type="radio" name="options" class="compareN" autocomplete="off">No Compare
+    </label>
+  </div>
+</div>
+
+<div id="information_canvas"></div>
+<div id="information_legend_canvas" style="text-align:center"></div>
+<div style="text-align:center;background-color:#c1daec;margin-top:1rem">*Colored area shows 10%-90% range for Top200 colleges data as reference</div>
