@@ -1,5 +1,7 @@
 # College-Data-Visualization
 visualize colleges data that no one else does - fully interactive visualization for 7000+ US post-seconddary institues
+6/13/2024 updates:
+add comments section for each data visualization, using LLM (chatGPT API) to comment on different colleges' different data
 
 ## College ranking and admission information visualization
 https://jsfiddle.net/gh/get/library/pure/lucaslulucaslu/College-Data-Visualization//tree/master/ranking-admission
