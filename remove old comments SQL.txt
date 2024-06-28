@@ -1,8 +1,0 @@
-UPDATE `wp_mmcp_posts` SET `post_content`=REPLACE(`post_content`,SUBSTRING(`post_content`,@start:=LOCATE('<div id="nav-college-international-students"',`post_content`),LOCATE('<!-- /wp:group -->',`post_content`,@start+1)-@start+18),concat('<div id="nav-college-international-students" class="wp-block-group"><!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">',LEFT(`post_title`,LOCATE('-',post_title)-1),'留学生人数变化</h3>
-<!-- /wp:heading -->
-
-<!-- wp:shortcode -->
-[amcharts id="chart-36"]
-<!-- /wp:shortcode --></div>
-<!-- /wp:group -->')) WHERE ID IN (SELECT postid FROM fp_ranking.colleges)
